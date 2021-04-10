@@ -1,4 +1,4 @@
-$(document).ready(function () {
+// $(document).ready(function () {
 
     function limpa_formulário_cep() {
         // Limpa valores do formulário de cep.
@@ -65,7 +65,7 @@ $(document).ready(function () {
             limpa_formulário_cep();
         }
     });
-});
+// });
 function addNome() {
     nome = document.getElementById("nomeCliente").value
     enderecoCliente.nome = document.getElementById("nomeCliente").value
