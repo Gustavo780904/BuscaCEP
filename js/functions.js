@@ -75,7 +75,7 @@
 // }
 
 function mostrarClientes() {
-    var arquivoJson = "http://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json"
+    var arquivoJson = "https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json"
     
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
