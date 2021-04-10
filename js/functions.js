@@ -65,11 +65,6 @@ $(document).ready(function () {
             limpa_formulário_cep();
         }
     });
-
-
-
-
-
 });
 function addNome() {
     nome = document.getElementById("nomeCliente").value
@@ -83,17 +78,21 @@ function mostrarClientes() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (xhttp.status == 200 && xhttp.readyState == 4)
-            loadMostrarClientes(xhttp, selCep, customersTab)
+            loadMostrarClientes(xhttp, selecao, exibeTabela)
     }
     xhttp.open("GET", arquivoJson, true)
     xhttp.send()
 }
-function mostrarInformacoesClientes(xhttp, selCep, customersTab) {
-    let tab = document.getElementById(customersTab)
+function mostrarInformacoesClientes(xhttp, selecao, exibeTabela) {
+    let tab = document.getElementById(exibeTabela)
+    var selecao = document.getElementById("selecao")
+    if(selecao == "cep" || selecao == "nome")
+    selecao = document.getElementById("cepNome").value
     lista = JSON.parse(xhttp.responseText)
     document.querySelectorAll("table tbody tr").forEach(function (linha) { linha.remove() })
     lista.clientes.forEach(enderecoCliente => {
-        if ((enderecoCliente.cep == selCep.value)|| (selCep.selectedIndex == 0)){
+        if ((enderecoCliente.cep == selecao.value)||(selCep.selectedIndex == 0)){
+        
             var linhaTab = document.createElement("tr")
             var colNome = document.createElement("td")
             var colCep = document.createElement("td")

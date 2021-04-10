@@ -14,7 +14,8 @@
 </head>
 
 <body>
-    <!-- Inicio do formulario -->
+    <h1>Cadastro de clientes</h1>
+    <!--formulario busca cep-->
     <form method="get" action=".">
         <label for="nomeCliente">Nome Cliente
             <input name="nomeCliente" type="text" id="nomeCliente" value=""></label><br>
@@ -32,7 +33,22 @@
             <input name="ibge" type="text" id="ibge" size="8" /></label><br />
     </form>
     <button onclick="addNome()">Salvar</button>
+    <!-- formulario exibe selecao -->
+    <label for="">Exibir clientes</label>
+    <select name="" id="selecao">
+        <option value="*">Listar todos</option>
+        <option value="cep">Por CEP</option>
+        <option value="nome">Por cidade</option>
+    </select>
+    <input type="text" id="cepNome">
+    <input type="button" value="Exibir Clientes" onclick="mostrarClientes(selecao, exibeTabela)">
+    <table id="exibeTabela">
+
+    </table>
+
 </body>
+
+
 <footer>
     <link href="https://receitasdecodigo.com.br/front-end/local-storage-html5-com-json">
 </footer>
