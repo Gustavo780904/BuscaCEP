@@ -80,7 +80,7 @@ function mostrarClientes() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (xhttp.status == 200 && xhttp.readyState == 4)
-            loadMostrarClientes(xhttp, selecao, exibeTabela)
+            loadMostrarInformacoesClientes(xhttp, selecao, exibeTabela)
     }
     xhttp.open("GET", arquivoJson, true)
     xhttp.send()
