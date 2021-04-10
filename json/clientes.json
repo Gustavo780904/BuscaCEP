@@ -1,0 +1,23 @@
+{
+    "clientes":[
+    {
+        "nome": "Gustavo Luiz",
+        "cep": "38540122",
+        "rua": "Abilio Machado, 48",
+        "bairro": "Centro",
+        "cidade": "Formiga",
+        "estado": "MG",
+        "ibge": "3103504"
+    },
+    {
+        "nome": "Elisa Monteiro",
+        "cep": "35570152",
+        "rua": "Praça Alberto Montarroyos, 57",
+        "bairro": "Alvorada",
+        "cidade": "Formiga",
+        "estado": "MG",
+        "ibge": "3126109"
+    }
+
+]
+}

@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     function limpa_formulário_cep() {
         // Limpa valores do formulário de cep.
@@ -8,9 +8,9 @@ $(document).ready(function() {
         $("#uf").val("");
         $("#ibge").val("");
     }
-    
+
     //Quando o campo cep perde o foco.
-    $("#cep").blur(function() {
+    $("#cep").blur(function () {
 
         //Nova variável "cep" somente com dígitos.
         var cep = $(this).val().replace(/\D/g, '');
@@ -22,7 +22,7 @@ $(document).ready(function() {
             var validacep = /^[0-9]{8}$/;
 
             //Valida o formato do CEP.
-            if(validacep.test(cep)) {
+            if (validacep.test(cep)) {
 
                 //Preenche os campos com "..." enquanto consulta webservice.
                 $("#rua").val("...");
@@ -32,7 +32,10 @@ $(document).ready(function() {
                 $("#ibge").val("...");
 
                 //Consulta o webservice viacep.com.br/
-                $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+                let cliente = $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
+                    enderecoCliente = cliente.responseJSON
+                    console.log(enderecoCliente);
+                    //leitura do nome para add ao json
 
                     if (!("erro" in dados)) {
                         //Atualiza os campos com os valores da consulta.
@@ -41,6 +44,8 @@ $(document).ready(function() {
                         $("#cidade").val(dados.localidade);
                         $("#uf").val(dados.uf);
                         $("#ibge").val(dados.ibge);
+
+
                     } //end if.
                     else {
                         //CEP pesquisado não foi encontrado.
@@ -61,3 +66,9 @@ $(document).ready(function() {
         }
     });
 });
+function addNome() {
+    nome = document.getElementById("nomeCliente").value
+    enderecoCliente.nome = document.getElementById("nomeCliente").value
+    console.log(enderecoCliente);
+    localStorage.setItem(document.getElementById("nomeCliente").value, JSON.stringify(enderecoCliente));
+}
