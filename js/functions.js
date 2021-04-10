@@ -87,15 +87,15 @@ function mostrarClientes(selecao, exibeTabela) {
 }
 function mostrarInformacoesClientes(xhttp, selecao, exibeTabela) {
     let tab = document.getElementById(exibeTabela)
-    let selecao = document.getElementById(selecao)
+    let selecaoPor = document.getElementById(selecao)
 
-    if(selecao == "cep" || selecao == "nome")
-    selecao = document.getElementById("cepNome").value
+    if(selecaoPor == "cep" || selecaoPor == "nome")
+    selecaoPor = document.getElementById("cepNome").value
 
     lista = JSON.parse(xhttp.responseText)
     document.querySelectorAll("table tbody tr").forEach(function (line) { line.remove() })
     lista.clientes.forEach(enderecoCliente => {
-        if ((enderecoCliente.cep == selecao.value)||enderecoCliente.nome == selecao.value || (selCep.selectedIndex == 0)){
+        if ((enderecoCliente.cep == selecaoPor.value)||enderecoCliente.nome == selecaoPor.value || (selCep.selectedIndex == 0)){
         
             var linhaTab = document.createElement("tr")
             var colNome = document.createElement("td")
