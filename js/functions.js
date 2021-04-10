@@ -65,13 +65,19 @@ $(document).ready(function () {
             limpa_formulário_cep();
         }
     });
+
+
+
+
+
 });
-function addNome(selCep, customersTab) {
+function addNome() {
     nome = document.getElementById("nomeCliente").value
     enderecoCliente.nome = document.getElementById("nomeCliente").value
     console.log(enderecoCliente);
     localStorage.setItem(document.getElementById("nomeCliente").value, JSON.stringify(enderecoCliente));
 }
+
 function mostrarClientes() {
     var arquivoJson = "https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json"
     var xhttp = new XMLHttpRequest();
@@ -79,7 +85,7 @@ function mostrarClientes() {
         if (xhttp.status == 200 && xhttp.readyState == 4)
             loadMostrarClientes(xhttp, selCep, customersTab)
     }
-    xhttp.open("GET, file, true")
+    xhttp.open("GET", arquivoJson, true)
     xhttp.send()
 }
 function mostrarInformacoesClientes(xhttp, selCep, customersTab) {
