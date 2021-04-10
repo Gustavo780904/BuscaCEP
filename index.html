@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang=pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busca CEP</title>
-    <script src="..js/functions.js"></script>
-    <!-- <link rel="stylesheet" href="https://github.com/Gustavo780904/BuscaCEP/blob/master/js/functions.js"> -->
+    <script src="js/functions.js"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <form method="get" action=".">
         <label>Cep:
-        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" /></label><br />
+            <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" /></label><br />
         <label>Rua:
-        <input name="rua" type="text" id="rua" size="60" /></label><br />
+            <input name="rua" type="text" id="rua" size="60" /></label><br />
         <label>Bairro:
-        <input name="bairro" type="text" id="bairro" size="40" /></label><br />
+            <input name="bairro" type="text" id="bairro" size="40" /></label><br />
         <label>Cidade:
-        <input name="cidade" type="text" id="cidade" size="40" /></label><br />
+            <input name="cidade" type="text" id="cidade" size="40" /></label><br />
         <label>Estado:
-        <input name="uf" type="text" id="uf" size="2" /></label><br />
+            <input name="uf" type="text" id="uf" size="2" /></label><br />
         <label>IBGE:
-        <input name="ibge" type="text" id="ibge" size="8" /></label><br />
-      </form>
+            <input name="ibge" type="text" id="ibge" size="8" /></label><br />
+    </form>
 </body>
+
 </html>
