@@ -66,9 +66,58 @@ $(document).ready(function () {
         }
     });
 });
-function addNome() {
+function addNome(selCep, customersTab) {
     nome = document.getElementById("nomeCliente").value
     enderecoCliente.nome = document.getElementById("nomeCliente").value
     console.log(enderecoCliente);
     localStorage.setItem(document.getElementById("nomeCliente").value, JSON.stringify(enderecoCliente));
+}
+function mostrarClientes() {
+    var arquivoJson = "https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json"
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.status == 200 && xhttp.readyState == 4)
+            loadMostrarClientes(xhttp, selCep, customersTab)
+    }
+    xhttp.open("GET, file, true")
+    xhttp.send()
+}
+function mostrarInformacoesClientes(xhttp, selCep, customersTab) {
+    let tab = document.getElementById(customersTab)
+    lista = JSON.parse(xhttp.responseText)
+    document.querySelectorAll("table tbody tr").forEach(function (linha) { linha.remove() })
+    lista.clientes.forEach(enderecoCliente => {
+        if ((enderecoCliente.cep == selCep.value)|| (selCep.selectedIndex == 0)){
+            var linhaTab = document.createElement("tr")
+            var colNome = document.createElement("td")
+            var colCep = document.createElement("td")
+            var colRua = document.createElement("td")
+            var colBairro = document.createElement("td")
+            var colCidade = document.createElement("td")
+            var colEstado = document.createElement("td")
+            var colIbge = document.createElement("td")
+            customersNome = document.createTextNode(enderecoCliente.nome)
+            customersCep = document.createTextNode(enderecoCliente.cep)
+            customersRua = document.createTextNode(enderecoCliente.rua)
+            customersBairro = document.createTextNode(enderecoCliente.bairro)
+            customersCidade = document.createTextNode(enderecoCliente.cidade)
+            customersEstado = document.createTextNode(enderecoCliente.estado)
+            customersIbge = document.createTextNode(enderecoCliente.ibge)
+            colNome.appendChild(customerNome)
+            colCep.appendChild(customerCep)
+            colRua.appendChild(customerRua)
+            colBairro.appendChild(customerBairro)
+            colCidade.appendChild(customerCidade)
+            colEstado.appendChild(customerEstado)
+            colIbge.appendChild(customerIbge)
+            linhaTab.appendChild(colNome)
+            linhaTab.appendChild(colCep)
+            linhaTab.appendChild(colRua)
+            linhaTab.appendChild(colBairro)
+            linhaTab.appendChild(colCidade)
+            linhaTab.appendChild(colEstado)
+            linhaTab.appendChild(colIbge)
+            tab.appendChild(linha)
+        }
+    })
 }
