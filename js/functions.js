@@ -74,24 +74,26 @@ function addNome() {
     localStorage.setItem(document.getElementById("nomeCliente").value, JSON.stringify(enderecoCliente));
 }
 
-function mostrarClientes() {
+function mostrarClientes(selecao, exibeTabela) {
     var arquivoJson = "https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json"
     
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (xhttp.status == 200 && xhttp.readyState == 4)
-            loadMostrarInformacoesClientes(xhttp, selecao, exibeTabela)
+            mostrarInformacoesClientes(xhttp, selecao, exibeTabela)
     }
     xhttp.open("GET", arquivoJson, true)
     xhttp.send()
 }
 function mostrarInformacoesClientes(xhttp, selecao, exibeTabela) {
     let tab = document.getElementById(exibeTabela)
-    var selecao = document.getElementById("selecao")
+    let selecao = document.getElementById(selecao)
+
     if(selecao == "cep" || selecao == "nome")
     selecao = document.getElementById("cepNome").value
+
     lista = JSON.parse(xhttp.responseText)
-    document.querySelectorAll("table tbody tr").forEach(function (linha) { linha.remove() })
+    document.querySelectorAll("table tbody tr").forEach(function (line) { line.remove() })
     lista.clientes.forEach(enderecoCliente => {
         if ((enderecoCliente.cep == selecao.value)||enderecoCliente.nome == selecao.value || (selCep.selectedIndex == 0)){
         
