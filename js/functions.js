@@ -80,6 +80,14 @@ function mostrarClientes(selecao, exibeTabela) {
     $.get(file, function(data) {
         createRecipes(data);
     });
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.status == 200 && xhttp.readyState == 4)
+            mostrarInformacoesClientes(xhttp, selecao, exibeTabela)
+    }
+    xhttp.open("GET", file, true)
+    xhttp.send()
 }
 // $.get("https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json", function(data) {
 //     $( ".result" ).html( data );
