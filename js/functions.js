@@ -79,9 +79,7 @@ function mostrarClientes(selecao, exibeTabela) {
     let file = "json/clientes.json";
     $.get(file, function(data) {
         mostrarInformacoesClientes(selecao, exibeTabela)
-        createRecipes(data);
-    });
-}
+ 
 //     var xhttp = new XMLHttpRequest();
 //     xhttp.onreadystatechange = function () {
 //         if (xhttp.status == 200 && xhttp.readyState == 4)
@@ -90,7 +88,7 @@ function mostrarClientes(selecao, exibeTabela) {
 //     xhttp.open("GET", file, true)
 //     xhttp.send()
 // }
-// $.get("https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json", function(data) {
+// 
 //     $( ".result" ).html( data );
 //     alert( "Load was performed." );
 //   });
@@ -104,7 +102,7 @@ function mostrarClientes(selecao, exibeTabela) {
 //         $("input").fadeIn();
 //       });
 // }
-function mostrarInformacoesClientes(xhttp, selecao, exibeTabela) {
+function mostrarInformacoesClientes(selecao, exibeTabela) {
     let tab = document.getElementById(exibeTabela)
     var selecaoPor = document.getElementById(selecao)
 console.log(selecaoPor)
@@ -149,4 +147,7 @@ console.log(selecaoPor)
             tab.appendChild(linha)
         }
     })
+}
+createRecipes(data);
+});
 }
