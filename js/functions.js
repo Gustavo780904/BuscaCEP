@@ -84,7 +84,7 @@ function mostrarClientes(selecao, exibeTabela) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (xhttp.status == 200 && xhttp.readyState == 4)
-            mostrarInformacoesClientes(xhttp, selecao, exibeTabela)
+            mostrarInformacoesClientes(selecao, exibeTabela)
     }
     xhttp.open("GET", file, true)
     xhttp.send()
