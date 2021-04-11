@@ -78,7 +78,7 @@ function mostrarClientes(selecao, exibeTabela) {
     // var file = "https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json"
     let file = "json/clientes.json";
     $.get(file, function(data) {
-        // mostrarInformacoesClientes(selecao, exibeTabela)
+        FmostrarInformacoesClientes(selecao, exibeTabela)
         createRecipes(data);
     });
 }
@@ -112,9 +112,9 @@ console.log(selecaoPor)
         selecaoPor = document.getElementById("cepNome").value
         // mostraInput()
     }
-    lista = JSON.parse(xhttp.responseText)
+    // lista = JSON.parse(xhttp.responseText)
     document.querySelectorAll("table tbody tr").forEach(function (line) { line.remove() })
-    lista.clientes.forEach(enderecoCliente => {
+    clientes.forEach(enderecoCliente => {
         if ((enderecoCliente.cep == selecaoPor.value) || enderecoCliente.nome == selecaoPor.value || (selecaoPor.selectedIndex == 0)) {
 
             var linhaTab = document.createElement("tr")
