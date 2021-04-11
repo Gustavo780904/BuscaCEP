@@ -75,7 +75,11 @@ function addNome() {
 }
 
 function mostrarClientes(selecao, exibeTabela) {
-    var file = "https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json"
+    // var file = "https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json"
+    let file = "json/clientes.json";
+    $.get(file, function(data) {
+        createRecipes(data);
+    });
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -85,15 +89,15 @@ function mostrarClientes(selecao, exibeTabela) {
     xhttp.open("GET", file, true)
     xhttp.send()
 }
-$.get("https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json", function(data) {
-    $( ".result" ).html( data );
-    alert( "Load was performed." );
-  });
-function escondeInput() {
-    $("#mostra").onchange = (function  () {
-        $("input").fadeOut();
-    });
-}
+// $.get("https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json", function(data) {
+//     $( ".result" ).html( data );
+//     alert( "Load was performed." );
+//   });
+// function escondeInput() {
+//     $("#mostra")(function  () {
+//         $("input").fadeOut();
+//     });
+// }
 // function mostraInput() {
 //     $("#mostra")(function(){
 //         $("input").fadeIn();
