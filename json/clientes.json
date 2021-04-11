@@ -1,5 +1,5 @@
-
-    [
+{
+    "clientes": [
     {
         "nome": "Gustavo Luiz",
         "cep": "38540122",
@@ -9,8 +9,6 @@
         "estado": "MG",
         "ibge": "3103504"
     },
-
-    
     {
         "nome": "Elisa Monteiro",
         "cep": "35570152",
@@ -20,5 +18,6 @@
         "estado": "MG",
         "ibge": "3126109"
     }
-]
 
+]
+}
