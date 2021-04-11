@@ -102,7 +102,7 @@ function mostrarClientes(selecao, exibeTabela) {
 //         $("input").fadeIn();
 //       });
 // }
-function mostrarInformacoesClientes(selecao, exibeTabela) {
+function mostrarInformacoesClientes(data, selecao, exibeTabela) {
     let tab = document.getElementById(exibeTabela)
     var selecaoPor = document.getElementById(selecao)
 console.log(selecaoPor)
@@ -112,7 +112,7 @@ console.log(selecaoPor)
     }
     // lista = JSON.parse(xhttp.responseText)
     document.querySelectorAll("table tbody tr").forEach(function (line) { line.remove() })
-    clientes.forEach(enderecoCliente => {
+    data.forEach(enderecoCliente => {
         if ((enderecoCliente.cep == selecaoPor.value) || enderecoCliente.nome == selecaoPor.value || (selecaoPor.selectedIndex == 0)) {
 
             var linhaTab = document.createElement("tr")
