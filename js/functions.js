@@ -78,7 +78,7 @@ function mostrarClientes(selecao, exibeTabela) {
     // var file = "https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json"
     let file = "json/clientes.json";
     $.get(file, function(data) {
-        mostrarInformacoesClientes(selecao, exibeTabela)
+        mostrarInformacoesClientes(data, selecao, exibeTabela)
  
 //     var xhttp = new XMLHttpRequest();
 //     xhttp.onreadystatechange = function () {
