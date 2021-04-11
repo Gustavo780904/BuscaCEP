@@ -105,7 +105,7 @@ function mostrarClientes(selecao, exibeTabela) {
 function mostrarInformacoesClientes(data, selecao, exibeTabela) {
     let tab = document.getElementById(exibeTabela)
     var selecaoPor = document.getElementById(selecao)
-console.log(selecaoPor)
+console.log(data)
     if (selecaoPor == "cep" || selecaoPor == "nome") {
         selecaoPor = document.getElementById("cepNome").value
         // mostraInput()
