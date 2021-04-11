@@ -81,7 +81,7 @@ function mostrarClientes(selecao, exibeTabela) {
         mostrarInformacoesClientes(selecao, exibeTabela)
         createRecipes(data);
     });
-
+}
 //     var xhttp = new XMLHttpRequest();
 //     xhttp.onreadystatechange = function () {
 //         if (xhttp.status == 200 && xhttp.readyState == 4)
