@@ -77,9 +77,6 @@ function addNome() {
 function mostrarClientes(selecao, exibeTabela) {
     // var file = "https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json"
     let file = "json/clientes.json";
-    $.get(file, function(data) {
-        createRecipes(data);
-    });
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
