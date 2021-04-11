@@ -106,13 +106,14 @@ function mostrarInformacoesClientes(data, selecao, exibeTabela) {
     let tab = document.getElementById(exibeTabela)
     var selecaoPor = document.getElementById(selecao)
 console.log(data)
+function le (){
     if (selecaoPor == "cep" || selecaoPor == "nome") {
-        selecaoPor = document.getElementById("cepNome").value
-        // mostraInput()
+        selecaoPor = document.getElementById("cepNome").value     
     }
-    // lista = JSON.parse(xhttp.responseText)
+}
     document.querySelectorAll("table tbody tr").forEach(function (line) { line.remove() })
     data.forEach(enderecoCliente => {
+        le()
         if ((enderecoCliente.cep == selecaoPor.value) || enderecoCliente.nome == selecaoPor.value || (selecaoPor.selectedIndex == 0)) {
 
             var linhaTab = document.createElement("tr")
