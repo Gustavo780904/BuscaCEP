@@ -104,9 +104,9 @@ function mostrarClientes(selecao, exibeTabela) {
 //         $("input").fadeIn();
 //       });
 // }
-function mostrarInformacoesClientes(xhttp, selecao , exibeTabela) {
+function mostrarInformacoesClientes(xhttp, selecao, exibeTabela) {
     let tab = document.getElementById(exibeTabela)
-    let selecaoPor = document.getElementById(selecao)
+    selecaoPor = document.getElementById(selecao)
 
     if (selecaoPor == "cep" || selecaoPor == "nome") {
         selecaoPor = document.getElementById("cepNome").value
