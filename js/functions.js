@@ -104,7 +104,7 @@ function mostrarClientes(selecao, exibeTabela) {
 //         $("input").fadeIn();
 //       });
 // }
-function mostrarInformacoesClientes(xhttp, selecaoPor, exibeTabela) {
+function mostrarInformacoesClientes(xhttp, selecao , exibeTabela) {
     let tab = document.getElementById(exibeTabela)
     let selecaoPor = document.getElementById(selecao)
 
