@@ -114,7 +114,7 @@ function mostrarInformacoesClientes(xhttp, selecaoPor, exibeTabela) {
     lista = JSON.parse(xhttp.responseText)
     document.querySelectorAll("table tbody tr").forEach(function (line) { line.remove() })
     lista.clientes.forEach(enderecoCliente => {
-        if ((enderecoCliente.cep == selecaoPor.value) || enderecoCliente.nome == selecaoPor.value || (selecao.selectedIndex == 0)) {
+        if ((enderecoCliente.cep == selecaoPor.value) || enderecoCliente.nome == selecaoPor.value || (selecaoPor.selectedIndex == 0)) {
 
             var linhaTab = document.createElement("tr")
             var colNome = document.createElement("td")
