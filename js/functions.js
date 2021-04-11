@@ -90,7 +90,7 @@ $.get("https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json"
     alert( "Load was performed." );
   });
 function escondeInput() {
-    $("#mostra")(function  () {
+    $("#mostra").onclick(function  () {
         $("input").fadeOut();
     });
 }
