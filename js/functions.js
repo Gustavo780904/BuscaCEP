@@ -75,21 +75,25 @@ function addNome() {
 }
 
 function mostrarClientes(selecao, exibeTabela) {
-    var arquivoJson = "https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json"
+    var file = "https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json"
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (xhttp.status == 200 && xhttp.readyState == 4)
             mostrarInformacoesClientes(xhttp, selecao, exibeTabela)
     }
-    xhttp.open("GET", arquivoJson, true)
+    xhttp.open("GET", file, true)
     xhttp.send()
 }
-// function escondeInput() {
-//     $("#mostra")(function  () {
-//         $("input").fadeOut();
-//     });
-// }
+$.get("https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json", function(data) {
+    $( ".result" ).html( data );
+    alert( "Load was performed." );
+  });
+function escondeInput() {
+    $("#mostra")(function  () {
+        $("input").fadeOut();
+    });
+}
 // function mostraInput() {
 //     $("#mostra")(function(){
 //         $("input").fadeIn();
@@ -101,7 +105,7 @@ function mostrarInformacoesClientes(xhttp, selecao, exibeTabela) {
 
     if (selecaoPor == "cep" || selecaoPor == "nome") {
         selecaoPor = document.getElementById("cepNome").value
-        mostraInput()
+        // mostraInput()
     }
     lista = JSON.parse(xhttp.responseText)
     document.querySelectorAll("table tbody tr").forEach(function (line) { line.remove() })
