@@ -77,14 +77,9 @@ function addNome() {
 function mostrarClientes(selecao, exibeTabela) {
     // var file = "https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json"
     let file = "json/clientes.json";
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (xhttp.status == 200 && xhttp.readyState == 4)
-            mostrarInformacoesClientes(xhttp, selecao, exibeTabela)
-    }
-    xhttp.open("GET", file, true)
-    xhttp.send()
+    $.get(file, function(data) {
+        createRecipes(data);
+    });
 }
 // $.get("https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json", function(data) {
 //     $( ".result" ).html( data );
