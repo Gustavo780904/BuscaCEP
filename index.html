@@ -14,7 +14,7 @@
     <script src="js/functions.js"> </script>
 </head>
 
-<body>
+<body onload="escondeInput()">
     <h1>Cadastro de clientes</h1>
     <!--formulario busca cep-->
     <form method="get" action=".">
@@ -41,8 +41,10 @@
         <option value="cep">Por CEP</option>
         <option value="nome">Por cidade</option>
     </select>
-    <input type="text" id="cepNome">
-    <input type="button" value="Exibir Clientes" onclick="mostrarClientes(selecao, exibeTabela)">
+    <div id="mostra">
+        <input type="text" id="cepNome">
+    </div>
+    <input type="button" value="Exibir Dados" onclick="mostrarInformacoesClientes(selecao, exibeTabela)">
     <table id="exibeTabela">
         <thead>
             <td>Nome</td>

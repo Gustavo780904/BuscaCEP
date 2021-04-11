@@ -65,7 +65,7 @@ $(document).ready(function () {
             limpa_formulário_cep();
         }
     });
-    
+
 });
 function addNome() {
     nome = document.getElementById("nomeCliente").value
@@ -76,7 +76,7 @@ function addNome() {
 
 function mostrarClientes(selecao, exibeTabela) {
     var arquivoJson = "https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json"
-    
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (xhttp.status == 200 && xhttp.readyState == 4)
@@ -85,18 +85,29 @@ function mostrarClientes(selecao, exibeTabela) {
     xhttp.open("GET", arquivoJson, true)
     xhttp.send()
 }
+function escondeInput() {
+    $("#mostra")(function  () {
+        $("input").fadeOut();
+    });
+}
+// function mostraInput() {
+//     $("#mostra")(function(){
+//         $("input").fadeIn();
+//       });
+// }
 function mostrarInformacoesClientes(xhttp, selecao, exibeTabela) {
     let tab = document.getElementById(exibeTabela)
     let selecaoPor = document.getElementById(selecao)
 
-    if(selecaoPor == "cep" || selecaoPor == "nome")
-    selecaoPor = document.getElementById("cepNome").value
-
+    if (selecaoPor == "cep" || selecaoPor == "nome") {
+        selecaoPor = document.getElementById("cepNome").value
+        mostraInput()
+    }
     lista = JSON.parse(xhttp.responseText)
     document.querySelectorAll("table tbody tr").forEach(function (line) { line.remove() })
     lista.clientes.forEach(enderecoCliente => {
-        if ((enderecoCliente.cep == selecaoPor.value)||enderecoCliente.nome == selecaoPor.value || (selCep.selectedIndex == 0)){
-        
+        if ((enderecoCliente.cep == selecaoPor.value) || enderecoCliente.nome == selecaoPor.value || (selCep.selectedIndex == 0)) {
+
             var linhaTab = document.createElement("tr")
             var colNome = document.createElement("td")
             var colCep = document.createElement("td")
