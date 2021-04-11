@@ -103,7 +103,7 @@ function mostrarClientes(selecao, exibeTabela) {
 //         $("input").fadeIn();
 //       });
 // }
-function mostrarInformacoesClientes(xhttp, selecao, exibeTabela) {
+function mostrarInformacoesClientes(xhttp, selecaoPor, exibeTabela) {
     let tab = document.getElementById(exibeTabela)
     let selecaoPor = document.getElementById("selecao")
 
