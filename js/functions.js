@@ -85,11 +85,11 @@ function mostrarClientes(selecao, exibeTabela) {
     xhttp.open("GET", arquivoJson, true)
     xhttp.send()
 }
-function escondeInput() {
-    $("#mostra")(function  () {
-        $("input").fadeOut();
-    });
-}
+// function escondeInput() {
+//     $("#mostra")(function  () {
+//         $("input").fadeOut();
+//     });
+// }
 // function mostraInput() {
 //     $("#mostra")(function(){
 //         $("input").fadeIn();
