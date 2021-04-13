@@ -99,7 +99,7 @@ function selecionaClientes() {
     if (selecao != "all" )
     cepNome = $("#cepNome");
     cepNome.focusout(function () {
-        get(cepNome.val());
+        (cepNome.val());
         console.log(cepNome)
     });
 }
