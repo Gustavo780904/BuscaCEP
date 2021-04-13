@@ -76,8 +76,11 @@ function addNome() {
 
 //inicio
 $(document).ready(function () {
-    $("#cepNome").hide();
+    $("#cepNome").hide()
     getEnderecos()
+})
+$(function(){
+    $("#selecao").change(()=>$(document.getElementById("cepNome")).show())
 })
 
 function getEnderecos() {
