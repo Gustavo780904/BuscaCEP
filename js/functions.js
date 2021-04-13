@@ -79,9 +79,16 @@ $(document).ready(function () {
     $("#cepNome").hide()
     getEnderecos()
 })
-$(function(){
-    $("#selecao").change(()=>$(document.getElementById("cepNome")).show())
-})
+function input() {
+    selecao = document.getElementById("selecao").value
+    if (selecao =="cep" || selecao == "cidade")
+    $("#cepNome").show()
+    else
+    $("#cepNome").hide()
+}
+// $(function(){
+//     $("#selecao").change(()=>$(document.getElementById("cepNome")).show())
+// })
 
 function getEnderecos() {
     let jsonFilePath = "json/clientes.json";
