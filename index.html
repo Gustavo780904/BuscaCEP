@@ -44,12 +44,12 @@
     <select name="" id="selecao" onchange="input(selecao)">
         <option value="all" selected>Listar todos</option>
         <option value="cep">Por CEP</option>
-        <option value="nome">Por cidade</option>
+        <option value="nome">Por cliente</option>
     </select>
     <div id="mostra">
         <input type="text" id="cepNome">
     </div>
-    <input type="button" value="Exibir Dados" onclick="mostrarClientes(selecao, exibeTabela)">
+    <input type="button" value="Exibir Dados" onclick="selecionaClientes(selecao, exibeTabela)">
     <table id="exibeTabela">
         <thead>
             <td>Nome</td>

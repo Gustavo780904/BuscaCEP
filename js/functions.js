@@ -82,9 +82,9 @@ $(document).ready(function () {
 function input(selecao) {
     selecao = document.getElementById("selecao").value
     if (selecao == "cep" || selecao == "nome")
-    $("#cepNome").show()
+        $("#cepNome").show()
     else
-    $("#cepNome").hide()
+        $("#cepNome").hide()
 }
 
 function getEnderecos() {
@@ -95,33 +95,13 @@ function getEnderecos() {
     });
 }
 function selecionaClientes() {
-    // let selecao = document.getElementById(selecao).value
-    // console.log(selecao)
-    // let selecaoPorNome = data.
-    //     var xhttp = new XMLHttpRequest();
-    //     xhttp.onreadystatechange = function () {
-    //         if (xhttp.status == 200 && xhttp.readyState == 4)
-
-    //     }
-    //     xhttp.open("GET", file, true)
-    //     xhttp.send()
-    // }
-    // 
-    //     $( ".result" ).html( data );
-    //     alert( "Load was performed." );
-    //   });
-    // function escondeInput() {
-    //     $("#mostra")(function  () {
-    //         $("input").fadeOut();
-    //     });
-    // }
-    // function mostraInput() {
-    //     $("#mostra")(function(){
-    //         $("input").fadeIn();
-    //       });
-    // }
-    // function mostrarInformacoesClientes() {
-    // let exibeTabela = document.getElementById(exibeTabela)
+    let selecao = document.getElementById("selecao").value
+    if (selecao != "all" )
+    cepNome = $("#cepNome");
+    cepNome.focusout(function () {
+        get(cepNome.val());
+        console.log(cepNome)
+    });
 }
     // console.log(data)
     // function selecaoPor(data) {
