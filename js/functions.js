@@ -87,9 +87,6 @@ function getEnderecos() {
     let jsonFilePath = "json/clientes.json";
     $.get(jsonFilePath, function (data) {
         selecionaClientes(data, selecao, exibeTabela)
-        $(function(){
-            $("#selecao")(()=>$(document.getElementById("meio")).hide())
-        })
     });
 }
 function selecionaClientes() {
