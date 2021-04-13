@@ -46,10 +46,8 @@
         <option value="cep">Por CEP</option>
         <option value="nome">Por cliente</option>
     </select>
-    <div id="mostra">
-        <input type="text" id="cepNome">
-    </div>
-    <input type="button" value="Exibir Dados" onclick="selecionaClientes(selecao, exibeTabela)">
+    <input type="text" id="cepNome">
+    <input type="button" id="mostrar" value="Exibir Dados" onclick="selecionaClientes(selecao, exibeTabela)">
     <table id="exibeTabela">
         <thead>
             <td>Nome</td>

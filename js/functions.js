@@ -96,11 +96,12 @@ function getEnderecos() {
 }
 function selecionaClientes() {
     let selecao = document.getElementById("selecao").value
-    if (selecao != "all" ){
-    $("#cepNome").focusout(function () {
-       var cepNome = $("#cepNome").val()
-        console.log(cepNome)
-    });
+    if (selecao != "all") {
+        $("#mostrar").click(function () {
+            var cepNome = $("#cepNome").val()
+            console.log(cepNome)
+        });
+    }
 }
     // console.log(data)
     // function selecaoPor(data) {
