@@ -96,13 +96,23 @@ function getEnderecos() {
 }
 function selecionaClientes() {
     let selecao = document.getElementById("selecao").value
-    if (selecao != "all") {
-        $("#mostrar").click(function () {
-            var cepNome = $("#cepNome").val()
-            console.log(cepNome)
+    if (selecao == "nome") {
+        $("#mostrar").focusout().click(function (data) {
+            let nomeCliente = $("#cepNome").val()
+            listaNome = data.filter(data.nome == nomeCliente)
+            exibeTabela(nome)
         });
-    }
+    } else if (selecao == "cep") {
+        $("#mostrar").focusout().click(function () {
+            let cepCliente = $("#cepNome").val()
+            listaCep = data.filter(data.cep == cepCliente)
+            exibeTabela(cep)
+        });
+    } else
+        exibeTabela(data)
+            console.log(data)
 }
+
     // console.log(data)
     // function selecaoPor(data) {
     //     if (selecaoPor == "cep" || selecaoPor == "nome") {
