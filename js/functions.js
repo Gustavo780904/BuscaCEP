@@ -112,50 +112,47 @@ function selecionaClientes(data) {
         });
     } else
         exibeTabela(data)
-            console.log(data)
+    console.log(data)
 }
 
-    // console.log(data)
-    // function selecaoPor(data) {
-    //     if (selecaoPor == "cep" || selecaoPor == "nome") {
-    //         selecaoPor = document.getElementById("cepNome").value
-    //     }
-    // }
+function exibeTabela(data) {
     //apaga atabela para não repetir
-    // document.querySelectorAll("table tbody tr").forEach(function (linha) { linha.remove() })
+    document.querySelectorAll("table tbody tr").forEach(function (linha) { linha.remove() })
+var tab = document.getElementById("exibeTabela")
+// var tbody = document.getElementById("tbody")
+    data.forEach(cliente => {
 
-    // data.forEach(enderecoCliente => {
-    //     if ((enderecoCliente.cep == selecaoPor.value) || enderecoCliente.nome == selecaoPor.value || (selecaoPor.selectedIndex == 0)) {
+            var linhaTab = document.createElement("tr")
+            var colNome = document.createElement("td")
+            var colCep = document.createElement("td")
+            var colRua = document.createElement("td")
+            var colBairro = document.createElement("td")
+            var colCidade = document.createElement("td")
+            var colEstado = document.createElement("td")
+            var colIbge = document.createElement("td")
+            customersNome = document.createTextNode(cliente.nome)
+            customersCep = document.createTextNode(cliente.cep)
+            customersRua = document.createTextNode(cliente.rua)
+            customersBairro = document.createTextNode(cliente.bairro)
+            customersCidade = document.createTextNode(cliente.cidade)
+            customersEstado = document.createTextNode(cliente.estado)
+            customersIbge = document.createTextNode(cliente.ibge)
+            colNome.appendChild(customerNome)
+            colCep.appendChild(customerCep)
+            colRua.appendChild(customerRua)
+            colBairro.appendChild(customerBairro)
+            colCidade.appendChild(customerCidade)
+            colEstado.appendChild(customerEstado)
+            colIbge.appendChild(customerIbge)
+            linhaTab.appendChild(colNome)
+            linhaTab.appendChild(colCep)
+            linhaTab.appendChild(colRua)
+            linhaTab.appendChild(colBairro)
+            linhaTab.appendChild(colCidade)
+            linhaTab.appendChild(colEstado)
+            linhaTab.appendChild(colIbge)
+            tab.appendChild(linha)
+        }
 
-    //         var linhaTab = document.createElement("tr")
-    //         var colNome = document.createElement("td")
-    //         var colCep = document.createElement("td")
-    //         var colRua = document.createElement("td")
-    //         var colBairro = document.createElement("td")
-    //         var colCidade = document.createElement("td")
-    //         var colEstado = document.createElement("td")
-    //         var colIbge = document.createElement("td")
-    //         customersNome = document.createTextNode(enderecoCliente.nome)
-    //         customersCep = document.createTextNode(enderecoCliente.cep)
-    //         customersRua = document.createTextNode(enderecoCliente.rua)
-    //         customersBairro = document.createTextNode(enderecoCliente.bairro)
-    //         customersCidade = document.createTextNode(enderecoCliente.cidade)
-    //         customersEstado = document.createTextNode(enderecoCliente.estado)
-    //         customersIbge = document.createTextNode(enderecoCliente.ibge)
-    //         colNome.appendChild(customerNome)
-    //         colCep.appendChild(customerCep)
-    //         colRua.appendChild(customerRua)
-    //         colBairro.appendChild(customerBairro)
-    //         colCidade.appendChild(customerCidade)
-    //         colEstado.appendChild(customerEstado)
-    //         colIbge.appendChild(customerIbge)
-    //         linhaTab.appendChild(colNome)
-    //         linhaTab.appendChild(colCep)
-    //         linhaTab.appendChild(colRua)
-    //         linhaTab.appendChild(colBairro)
-    //         linhaTab.appendChild(colCidade)
-    //         linhaTab.appendChild(colEstado)
-    //         linhaTab.appendChild(colIbge)
-    //         tab.appendChild(linha)
-    //     }
-    // })
+    )
+}
