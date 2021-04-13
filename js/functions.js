@@ -94,6 +94,7 @@ function getEnderecos() {
     let jsonFilePath = "json/clientes.json";
     $.get(jsonFilePath, function (data) {
         selecionaClientes(data, selecao, exibeTabela)
+        console.log(data)
     });
 }
 function selecionaClientes() {
