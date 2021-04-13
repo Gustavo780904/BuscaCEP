@@ -90,11 +90,11 @@ function input(selecao) {
 function getEnderecos() {
     let jsonFilePath = "json/clientes.json";
     $.get(jsonFilePath, function (data) {
-        selecionaClientes(data, selecao, exibeTabela)
+        selecionaClientes(data)
         console.log(data)
     });
 }
-function selecionaClientes() {
+function selecionaClientes(data) {
     let selecao = document.getElementById("selecao").value
     if (selecao == "nome") {
         $("#mostrar").focusout().click(function (data) {
