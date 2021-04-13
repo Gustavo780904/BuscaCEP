@@ -96,7 +96,7 @@ function getEnderecos() {
 }
 function selecionaClientes() {
     let selecao = document.getElementById("selecao").value
-    if (selecao != "all" )
+    if (selecao != "all" ){
     $("#cepNome").focusout(function () {
        var cepNome = $("#cepNome").val()
         console.log(cepNome)
