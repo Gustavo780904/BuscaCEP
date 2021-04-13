@@ -79,7 +79,7 @@ $(document).ready(function () {
     $("#cepNome").hide()
     getEnderecos()
 })
-function input() {
+function input(selecao) {
     selecao = document.getElementById("selecao").value
     if (selecao =="cep" || selecao == "cidade")
     $("#cepNome").show()
