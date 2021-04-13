@@ -81,7 +81,7 @@ $(document).ready(function () {
 })
 function input(selecao) {
     selecao = document.getElementById("selecao").value
-    if (selecao =="cep" || selecao == "cidade")
+    if (selecao == "cep" || selecao == "nome")
     $("#cepNome").show()
     else
     $("#cepNome").hide()
