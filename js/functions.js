@@ -100,13 +100,15 @@ function selecionaClientes() {
         $("#mostrar").focusout().click(function (data) {
             let nomeCliente = $("#cepNome").val()
             listaNome = data.filter(data.nome == nomeCliente)
-            exibeTabela(nome)
+            exibeTabela(listaNome)
+            console.log(listaNome)
         });
     } else if (selecao == "cep") {
         $("#mostrar").focusout().click(function () {
             let cepCliente = $("#cepNome").val()
             listaCep = data.filter(data.cep == cepCliente)
-            exibeTabela(cep)
+            exibeTabela(listaCep)
+            console.log(listaCep)
         });
     } else
         exibeTabela(data)
