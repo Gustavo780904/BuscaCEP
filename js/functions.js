@@ -115,11 +115,11 @@ function selecionaClientes() {
     // let exibeTabela = document.getElementById(exibeTabela)
 }
     console.log(data)
-    function selecaoPor(data) {
-        if (selecaoPor == "cep" || selecaoPor == "nome") {
-            selecaoPor = document.getElementById("cepNome").value
-        }
-    }
+    // function selecaoPor(data) {
+    //     if (selecaoPor == "cep" || selecaoPor == "nome") {
+    //         selecaoPor = document.getElementById("cepNome").value
+    //     }
+    // }
     //apaga atabela para não repetir
     document.querySelectorAll("table tbody tr").forEach(function (linha) { linha.remove() })
 
