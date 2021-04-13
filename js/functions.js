@@ -94,6 +94,7 @@ function getEnderecos() {
         console.log(data)
     });
 }
+/*
 function selecionaClientes() {
     let selecao = document.getElementById("selecao").value
     if (selecao == "nome") {
@@ -155,4 +156,4 @@ var tab = document.getElementById("exibeTabela")
         }
 
     )
-}
+}*/
