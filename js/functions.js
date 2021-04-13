@@ -104,7 +104,7 @@ function selecionaClientes(data) {
             console.log(listaNome)
         });
     } else if (selecao == "cep") {
-        $("#mostrar").focusout().click(function () {
+        $("#mostrar").focusout().click(function (data) {
             let cepCliente = $("#cepNome").val()
             listaCep = data.filter(data.cep == cepCliente)
             exibeTabela(listaCep)
