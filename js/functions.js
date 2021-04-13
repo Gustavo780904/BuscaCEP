@@ -74,46 +74,56 @@ function addNome() {
     localStorage.setItem(document.getElementById("nomeCliente").value, JSON.stringify(enderecoCliente));
 }
 
-function mostrarClientes(selecao, exibeTabela) {
-    // var file = "https://github.com/Gustavo780904/BuscaCEP/blob/master/json/clientes.json"
-    let file = "json/clientes.json";
-    $.get(file, function(data) {
-        mostrarInformacoesClientes(data, selecao, exibeTabela)
- 
-//     var xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function () {
-//         if (xhttp.status == 200 && xhttp.readyState == 4)
-            
-//     }
-//     xhttp.open("GET", file, true)
-//     xhttp.send()
-// }
-// 
-//     $( ".result" ).html( data );
-//     alert( "Load was performed." );
-//   });
-// function escondeInput() {
-//     $("#mostra")(function  () {
-//         $("input").fadeOut();
-//     });
-// }
-// function mostraInput() {
-//     $("#mostra")(function(){
-//         $("input").fadeIn();
-//       });
-// }
-function mostrarInformacoesClientes(data, selecao, exibeTabela) {
-    let tab = document.getElementById(exibeTabela)
-    var selecaoPor = document.getElementById(selecao)
-console.log(data)
-function le (){
-    if (selecaoPor == "cep" || selecaoPor == "nome") {
-        selecaoPor = document.getElementById("cepNome").value     
-    }
+//inicio
+$(document).ready(function () {
+    getEnderecos()
+})
+
+function getEnderecos() {
+    let jsonFilePath = "json/clientes.json";
+    $.get(jsonFilePath, function (data) {
+        selecionaClientes(data, selecao, exibeTabela)
+    });
 }
-    document.querySelectorAll("table tbody tr").forEach(function (line) { line.remove() })
+function selecionaClientes() {
+    let selecao = document.getElementById(selecao).value
+    console.log(selecao)
+    // let selecaoPorNome = data.
+    //     var xhttp = new XMLHttpRequest();
+    //     xhttp.onreadystatechange = function () {
+    //         if (xhttp.status == 200 && xhttp.readyState == 4)
+
+    //     }
+    //     xhttp.open("GET", file, true)
+    //     xhttp.send()
+    // }
+    // 
+    //     $( ".result" ).html( data );
+    //     alert( "Load was performed." );
+    //   });
+    // function escondeInput() {
+    //     $("#mostra")(function  () {
+    //         $("input").fadeOut();
+    //     });
+    // }
+    // function mostraInput() {
+    //     $("#mostra")(function(){
+    //         $("input").fadeIn();
+    //       });
+    // }
+    // function mostrarInformacoesClientes() {
+    // let exibeTabela = document.getElementById(exibeTabela)
+}
+    console.log(data)
+    function selecaoPor(data) {
+        if (selecaoPor == "cep" || selecaoPor == "nome") {
+            selecaoPor = document.getElementById("cepNome").value
+        }
+    }
+    //apaga atabela para não repetir
+    document.querySelectorAll("table tbody tr").forEach(function (linha) { linha.remove() })
+
     data.forEach(enderecoCliente => {
-        le()
         if ((enderecoCliente.cep == selecaoPor.value) || enderecoCliente.nome == selecaoPor.value || (selecaoPor.selectedIndex == 0)) {
 
             var linhaTab = document.createElement("tr")
@@ -148,7 +158,3 @@ function le (){
             tab.appendChild(linha)
         }
     })
-}
-createRecipes(data);
-});
-}
