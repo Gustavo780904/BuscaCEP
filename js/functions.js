@@ -93,8 +93,8 @@ function getEnderecos() {
     });
 }
 function selecionaClientes() {
-    let selecao = document.getElementById(selecao).value
-    console.log(selecao)
+    // let selecao = document.getElementById(selecao).value
+    // console.log(selecao)
     // let selecaoPorNome = data.
     //     var xhttp = new XMLHttpRequest();
     //     xhttp.onreadystatechange = function () {
@@ -121,7 +121,7 @@ function selecionaClientes() {
     // function mostrarInformacoesClientes() {
     // let exibeTabela = document.getElementById(exibeTabela)
 }
-    console.log(data)
+    // console.log(data)
     // function selecaoPor(data) {
     //     if (selecaoPor == "cep" || selecaoPor == "nome") {
     //         selecaoPor = document.getElementById("cepNome").value
